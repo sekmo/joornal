@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+    render(partial: "posts/count") and return if params[:count_only]
     @posts = Post.all
   end
 
